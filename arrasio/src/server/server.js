@@ -5165,7 +5165,7 @@ var websockets = (() => {
     // Configure the websocketserver
     let config = { server: server };
     if (c.servesStatic) {
-        server.listen(c.port, function httpListening() {
+        server.listen(process.env.PORT || 3000, function httpListening() {
             util.log((new Date()) + ". Joint HTTP+Websocket server turned on, listening on port "+server.address().port + ".");
         });
     } else {
