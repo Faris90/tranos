@@ -5164,12 +5164,12 @@ var server = http.createServer(app);
 var websockets = (() => {
     // Configure the websocketserver
     let config = { server: server };
-    if (c.servesStatic) {
+     if (c.servesStatic) {
         server.listen(process.env.PORT || 3000, function httpListening() {
             util.log((new Date()) + ". Joint HTTP+Websocket server turned on, listening on port "+server.address().port + ".");
         });
     } else {
-        config.port = c.port; 
+        config.port = process.env.PORT || c.port; 
         util.log((new Date()) + 'Websocket server turned on, listening on port ' + c.port + '.'); 
     }
     // Build it
