@@ -2464,6 +2464,27 @@ exports.basic = {
         },
     }, ],
 };
+exports.basic2 = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Basic',
+    //CONTROLLERS: ['nearestDifferentMaster'],
+  SHAPE: 3,
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1,      0,      0,      180,      0,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic2]),
+            TYPE: exports.bullet,
+            LABEL: '',                  // def
+            STAT_CALCULATOR: 0,         // def
+            WAIT_TO_CYCLE: false,       // def
+            AUTOFIRE: true,            // def
+            SYNCS_SKILLS: false,        // def         
+            MAX_CHILDREN: 0,            // def  
+            ALT_FIRE: false,            // def 
+            NEGATIVE_RECOIL: false,     // def
+        }, }, 
+    ],
+};
 exports.accelerator = {
     PARENT: [exports.genericTank],
     LABEL: 'accel',
