@@ -469,9 +469,9 @@ class io_listenToPlayer extends IO {
             };
         }
         if (this.body.invuln) {
-            if (this.player.command.right || this.player.command.left || this.player.command.up || this.player.command.down || this.player.command.lmb) {
-                this.body.invuln = false;
-            }
+            //if (this.player.command.right || this.player.command.left || this.player.command.up || this.player.command.down || this.player.command.lmb) {
+               setInterval(function(){  this.body.invuln = false; }, 5000);
+            }//
         }
         this.body.autoOverride = this.player.command.override;
         return {         
@@ -1396,7 +1396,7 @@ class Gun {
                 : true;                
             // Override in invuln
             if (this.body.master.invuln) {
-                shootPermission = false;
+                //shootPermission = false;
             }
             // Cycle up if we should
             if (shootPermission || !this.waitToCycle) {
@@ -2510,7 +2510,9 @@ class Entity {
 
     contemplationOfMortality() {
         if (this.invuln) {
-            this.damageRecieved = 0;
+              this.health.amount += 1;
+              this.shield.amount += 1; 
+		this.damageRecieved = 0;
             return 0;
         }
         // Life-limiting effects
