@@ -470,7 +470,8 @@ class io_listenToPlayer extends IO {
         }
         if (this.body.invuln) {
             //if (this.player.command.right || this.player.command.left || this.player.command.up || this.player.command.down || this.player.command.lmb) {
-               
+             			setTimeout(function(){  this.player.body.invuln = false; }, 5000);
+  
 		
            // }
         }
@@ -3617,7 +3618,6 @@ const sockets = (() => {
                         body.addController(new io_listenToPlayer(body, player)); // Make it listen
                         body.sendMessage = content => messenger(socket, content); // Make it speak
                         body.invuln = true; // Make it safe
-			setTimeout(function(){  this.player.body.invuln = false; }, 5000);
                     player.body = body;
                     // Decide how to color and team the body
                     switch (room.gameMode) {
