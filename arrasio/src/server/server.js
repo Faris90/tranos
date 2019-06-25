@@ -470,8 +470,9 @@ class io_listenToPlayer extends IO {
         }
         if (this.body.invuln) {
             //if (this.player.command.right || this.player.command.left || this.player.command.up || this.player.command.down || this.player.command.lmb) {
-             			setTimeout(function(){  this.body.invuln = false; }, 5000);
-  
+             			setTimeout(() => {
+		this.body.invuln = false;
+   }, 5000);
 		
            // }
         }
